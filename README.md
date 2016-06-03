@@ -1,10 +1,8 @@
 # Enonic Academy starter
 
-~~
-Enonic XP app - "[My First App](http://xp.readthedocs.org/en/6.5/tutorials/my-first-app/index.html)" - from the documentation.
+This starter kit serves as the base for all our developer courses at the Enonic Academy. It kickstarts the students with a few parts, content-types, a page, and also some content. It's loosely based on "[My First App](http://xp.readthedocs.org/en/6.5/tutorials/my-first-app/index.html)" from the documentation.
 
-This software is made available as-is. It's just to demonstrate a simple app for Enonic XP. On installation it will automatically create the site and populate it with some demo content.
-~~
+This software is made available as-is.
 
 ## Building and deploying
 
