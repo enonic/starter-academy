@@ -87,7 +87,7 @@ public class DemoInitializer
     private void doInitialize()
         throws Exception
     {
-        final ContentPath demoSitePath = ContentPath.from( "/hello-world" );
+        final ContentPath demoSitePath = ContentPath.from( "/enonic-academy" );
         if ( hasContent( demoSitePath ) )
         {
             return;

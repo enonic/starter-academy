@@ -3,7 +3,7 @@
   <xsl:output method="xml" indent="yes"/>
   <xsl:param name="applicationId"/>
   <xsl:variable name="applicationIdDashed" select="translate($applicationId, '.', '-')"/>
-  <xsl:variable name="placeholderApp" select="'com.enonic.app.myfirstapp'"/>
+  <xsl:variable name="placeholderApp" select="'com.enonic.starter.academy'"/>
   <xsl:variable name="placeholderAppDashed" select="translate($placeholderApp, '.', '-')"/>
 
   <xsl:template match="string[starts-with(text(),concat($placeholderApp,':'))]">
