@@ -53,7 +53,7 @@
             </property-set>
         </property-set>
         <property-set name="page">
-            <string name="controller">com.enonic.starter.academy:hello</string>
+            <string name="controller">com.enonic.starter.academy:default</string>
             <reference isNull="true" name="template"/>
             <property-set isNull="true" name="region"/>
             <property-set name="config"/>

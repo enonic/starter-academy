@@ -49,7 +49,7 @@
             <string name="supports">com.enonic.starter.academy:country</string>
         </property-set>
         <property-set name="page">
-            <string name="controller">com.enonic.starter.academy:hello-region</string>
+            <string name="controller">com.enonic.starter.academy:default</string>
             <reference isNull="true" name="template"/>
             <property-set name="region">
                 <string name="name">main</string>
