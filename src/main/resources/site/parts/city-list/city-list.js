@@ -1,22 +1,29 @@
-var contentLib = require('/lib/xp/content'); // Import the content library functions
-var portal = require('/lib/xp/portal'); // Import the portal functions
-var thymeleaf = require('/lib/xp/thymeleaf'); // Import the Thymeleaf rendering function
+var libs = {
+	portal: require('/lib/xp/portal'), // Import the portal functions
+	content: require('/lib/xp/content'), // Import the content library functions
+	thymeleaf: require('/lib/xp/thymeleaf') // Import the Thymeleaf rendering function
+};
+
+// Specify the view file to use
+var conf = {
+	view: resolve('city-list.html')
+};
 
 // Handle the GET request
 exports.get = function (req) {
 
     // Get the part configuration for the map
-    var config = portal.getComponent().config;
+    var config = libs.portal.getComponent().config;
     var zoom = parseInt(config.zoom) && config.zoom <= 15 && config.zoom >= 1 ? config.zoom : 10;
     var mapType = config.mapType || 'ROADMAP';
 
     // String that will be inserted to the head of the document
     var googleMaps = '<script src="http://maps.googleapis.com/maps/api/js"></script>';
 
-    var countryPath = portal.getContent()._path;
+    var countryPath = libs.portal.getContent()._path;
 
     // Get all the country's cities
-    var result = contentLib.query({
+    var result = libs.content.query({
         start: 0,
         count: 100,
         contentTypes: [
@@ -63,12 +70,9 @@ exports.get = function (req) {
         cities: cities
     };
 
-    // Specify the view file to use
-    var view = resolve('city-list.html');
-
     // Return the response object
     return {
-        body: thymeleaf.render(view, model),
+        body: libs.thymeleaf.render(view, model),
         // Put the maps' javascript into the head of the document
         pageContributions: {
             headEnd: googleMaps
