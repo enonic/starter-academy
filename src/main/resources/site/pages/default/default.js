@@ -1,5 +1,12 @@
-var portal = require('/lib/xp/portal'); // Import the portal functions
-var thymeleaf = require('/lib/xp/thymeleaf'); // Import the Thymeleaf rendering function
+var libs = {
+	portal: require('/lib/xp/portal'), // Import the portal functions
+	thymeleaf: require('/lib/xp/thymeleaf') // Import the Thymeleaf rendering function
+}
+
+// Specify the view file to use
+var conf = {
+	view: resolve('default.html')
+};
 
 // Handle the GET request
 exports.get = function(req) {
@@ -15,9 +22,6 @@ exports.get = function(req) {
         mainRegion: mainRegion
     }
 
-    // Specify the view file to use
-    var view = resolve('hello-region.html');
-    
     // Render the dynamic HTML with values from the model
     var body = thymeleaf.render(view, model);
 
