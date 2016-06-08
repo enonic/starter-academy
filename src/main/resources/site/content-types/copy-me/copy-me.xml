@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<content-type>
+	<display-name>TODO: Give this a name!</display-name>
+	<super-type>base:structured</super-type>
+	<form>
+		<!-- TODO: Add your input types here instead of this sorry comment. -->
+	</form>
+</content-type>
