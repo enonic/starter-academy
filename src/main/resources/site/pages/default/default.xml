@@ -1,5 +1,5 @@
 <page>
-  <display-name>Hello Region</display-name>
+  <display-name>Default</display-name>
   <config/>
   <regions>
     <region name="main"/>
