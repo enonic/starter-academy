@@ -19,7 +19,7 @@ exports.get = function(req) {
 
     // Prepare the model that will be passed to the view
     var model = {
-        mainRegion: mainRegion
+        mainRegion: mainRegion || [] // Send in blank array if region is empty
     }
 
     // Render the dynamic HTML with values from the model
