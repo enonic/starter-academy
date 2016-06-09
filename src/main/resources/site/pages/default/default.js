@@ -23,7 +23,7 @@ exports.get = function(req) {
     }
 
     // Render the dynamic HTML with values from the model
-    var body = libs.thymeleaf.render(view, model);
+    var body = libs.thymeleaf.render(conf.view, model);
 
     // Return the response object
     return {

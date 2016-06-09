@@ -23,6 +23,6 @@ exports.get = function(req) {
 
     // Return the merged view and model in the response object
     return {
-        body: libs.thymeleaf.render(view, model)
+        body: libs.thymeleaf.render(conf.view, model)
     }
 };

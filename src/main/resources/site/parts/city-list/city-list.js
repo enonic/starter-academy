@@ -72,7 +72,7 @@ exports.get = function (req) {
 
     // Return the response object
     return {
-        body: libs.thymeleaf.render(view, model),
+        body: libs.thymeleaf.render(conf.view, model),
         // Put the maps' javascript into the head of the document
         pageContributions: {
             headEnd: googleMaps
