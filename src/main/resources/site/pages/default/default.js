@@ -15,11 +15,20 @@ exports.get = function(req) {
     var content = libs.portal.getContent();
 
     // Extract the main region which contains component parts
-    var mainRegion = content.page.regions.main;
+    var mainRegion = content.page.regions.main || null;
+
+	 // Count number of components in main region so that we can display the placeholder when empty
+	 var regionLength = mainRegion ? mainRegion.components.length : 0;
+
+	 // Examples of logging (built into the core of XP)
+	 //log.info('%s', mainRegion);
+	 //log.info(regionLength);
 
     // Prepare the model that will be passed to the view
     var model = {
-        mainRegion: mainRegion || [] // Send in blank array if region is empty
+		  content: content,
+		  mainRegion: mainRegion,
+		  regions: regionLength
     }
 
     // Render the dynamic HTML with values from the model

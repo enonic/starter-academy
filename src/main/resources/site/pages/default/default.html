@@ -5,9 +5,18 @@
 </head>
 <body data-portal-component-type="page">
 
+	<!--/* Placeholder for empty component list */-->
+	<div data-th-remove="tag" data-th-if="${regions == 0}">
+		<h1 data-th-text="${content.displayName}"></h1>
+		<p>The most empty site in the world!?</p>
+		<p><em>(Add any Component to this region and save to rid the world of this message)</em></p>
+	</div>
+
 	<div data-portal-region="main">
-		<div data-th-if="${mainRegion}" data-th-each="component : ${mainRegion.components}" data-th-remove="tag">
-			<div data-portal-component="${component.path}" data-th-remove="tag"></div>
+		<div data-th-remove="tag" data-th-if="${regions > 0}">
+			<div data-th-each="component : ${mainRegion.components}" data-th-remove="tag">
+				<div data-portal-component="${component.path}" data-th-remove="tag"></div>
+			</div>
 		</div>
 	</div>
 
