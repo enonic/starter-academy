@@ -13,6 +13,7 @@ exports.get = function(req) {
 
     // Get the content that is using the page
     var content = libs.portal.getContent();
+    var site = libs.portal.getSite();
 
     // Extract the main region which contains component parts
     var mainRegion = content.page.regions.main || null;
@@ -28,7 +29,8 @@ exports.get = function(req) {
     var model = {
 		  content: content,
 		  mainRegion: mainRegion,
-		  regions: regionLength
+		  regions: regionLength,
+		  siteName: site.displayName
     }
 
     // Render the dynamic HTML with values from the model

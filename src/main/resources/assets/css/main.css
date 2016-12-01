@@ -1,0 +1,38 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+}
+.xp-page, .xp-region, .xp-layout, .xp-part {
+	padding: 6px;
+}
+.xp-page {
+	/*background-color: */
+	border: 5px solid #cccccc;
+}
+.xp-region {
+	border: 5px solid #d9d2e9;
+}
+.xp-layout {
+	/*border: 5px solid #d9d2e9;*/
+}
+.xp-part {
+	border: 5px solid #b6d7a8;
+}
+
+body > header {
+	background-color: #cccccc;
+	color: white;
+	padding: 8px;
+	margin-bottom: 6px;
+}
+body > footer {
+	background-color: #cccccc;
+	color: white;
+	padding: 8px;
+	margin-top: 6px;
+}
+
+.cities {
+	min-height: 100px;
+}

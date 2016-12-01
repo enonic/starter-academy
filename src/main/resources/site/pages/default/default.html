@@ -2,23 +2,32 @@
 <html>
 <head>
 	<title>Enonic Academy</title>
+	<link rel="stylesheet" data-th-href="${portal.assetUrl({'_path=css/main.css'})}"/>
 </head>
-<body data-portal-component-type="page">
+<body data-portal-component-type="page" class="xp-page">
+
+	<header>
+		<h1 data-th-text="${siteName}">Enonic Academy</h1>
+	</header>
 
 	<!--/* Placeholder for empty component list */-->
 	<div data-th-remove="tag" data-th-if="${regions == 0}">
-		<h1 data-th-text="${content.displayName}"></h1>
+		<!--<h1 data-th-text="${content.displayName}"></h1>-->
 		<p>The most empty site in the world!?</p>
-		<p><em>(Add any Component to this region and save to rid the world of this message)</em></p>
+		<p><em>(Add any Component to this region <strong>and save draft</strong> to rid the world of this message)</em></p>
 	</div>
 
-	<div data-portal-region="main">
+	<div data-portal-region="main" class="xp-region">
 		<div data-th-remove="tag" data-th-if="${regions > 0}">
 			<div data-th-each="component : ${mainRegion.components}" data-th-remove="tag">
 				<div data-portal-component="${component.path}" data-th-remove="tag"></div>
 			</div>
 		</div>
 	</div>
+
+	<footer>
+		<p>Copyright forever</p>
+	</footer>
 
 </body>
 </html>
