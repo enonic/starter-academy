@@ -18,14 +18,14 @@ exports.get = function(req) {
 	// TODO: if needed, manipulate the collected data here
 
 	/* ### Prepare ### */
-	var params = {
+	var model = {
 		content: content,
 		component: component
 	}
 
 	/* ### Return ### */
 	return {
-		body: libs.thymeleaf.render(conf.view, params)
+		body: libs.thymeleaf.render(conf.view, model)
 	};
 
 };
