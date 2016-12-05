@@ -36,3 +36,27 @@ body > footer {
 .cities {
 	min-height: 100px;
 }
+.banner {
+	background-color: gray;
+	color: white;
+	height: 150px;
+	overflow: hidden;
+	width: 1024px;
+	margin: 0 auto;
+	padding: 0;
+}
+.banner img {
+	height: 150px;
+}
+.banner .overlay {
+	margin-top: -150px;
+}
+.banner .overlay h3,
+.banner .overlay p {
+	display: inline;
+	background-color: hsla(1,0%,0%,0.6);
+	padding: 2px 4px;
+}
+.banner .overlay h3 {
+	margin-bottom: 15px;
+}
