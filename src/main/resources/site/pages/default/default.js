@@ -21,16 +21,21 @@ exports.get = function(req) {
 	 // Count number of components in main region so that we can display the placeholder when empty
 	 var regionLength = mainRegion ? mainRegion.components.length : 0;
 
+
 	 // Examples of logging (built into the core of XP)
 	 //log.info('%s', mainRegion);
 	 //log.info(regionLength);
+
+	 var isFragment = content.type === 'portal:fragment';
+	 if (isFragment) mainRegion = null;
 
     // Prepare the model that will be passed to the view
     var model = {
 		  content: content,
 		  mainRegion: mainRegion,
 		  regions: regionLength,
-		  siteName: site.displayName
+		  siteName: site.displayName,
+		  isFragment: isFragment
     }
 
     // Render the dynamic HTML with values from the model
