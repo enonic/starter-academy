@@ -15,6 +15,9 @@
 		<input type="ImageSelector" name="imageKey">
 			<label>Image</label>
 			<occurrences minimum="0" maximum="1"/>
+			<config>
+				<allowPath>${site}/*</allowPath>
+			</config>
 		</input>
 	</config>
 </part>
