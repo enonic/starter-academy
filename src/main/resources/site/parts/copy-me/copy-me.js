@@ -11,8 +11,8 @@ var conf = {
 exports.get = function(req) {
 
 	/* ### Collect ### */
-	var content = libs.portal.getContent();
-	var component = libs.portal.getComponent();
+	var content = libs.portal.getContent(); // Get current content that is viewed. See the docs for JSON format.
+	var component = libs.portal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.
 
 	/* ### Manipulate ### */
 	// TODO: if needed, manipulate the collected data here
