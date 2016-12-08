@@ -4,16 +4,17 @@
 	<config>
 		<input type="TextLine" name="header">
 			<label>Header</label>
-			<occurrences minimum="1" maximum="1"/>
+			<occurrences minimum="0" maximum="1"/>
+			<default>Awesome land</default>
 		</input>
 		<input type="TextArea" name="description">
 			<label>Description</label>
-			<occurrences minimum="1" maximum="1"/>
+			<occurrences minimum="0" maximum="1"/>
 			<default>Such an amazing country, everyone should visit - Random quote</default>
 		</input>
 		<input type="ImageSelector" name="imageKey">
 			<label>Image</label>
-			<occurrences minimum="1" maximum="1"/>
+			<occurrences minimum="0" maximum="1"/>
 		</input>
 	</config>
 </part>
