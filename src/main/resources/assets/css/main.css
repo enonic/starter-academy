@@ -46,7 +46,7 @@ body > footer {
 	margin: 0 auto;
 	padding: 0;
 }
-.banner img {
+.banner .image-container {
 	height: 150px;
 }
 .banner .overlay {
