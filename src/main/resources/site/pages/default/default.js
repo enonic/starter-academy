@@ -26,7 +26,6 @@ exports.get = function(req) {
 	 // Count number of components in main region so that we can display the placeholder when empty
 	 var regionLength = mainRegion ? mainRegion.components.length : 0;
 
-
 	 // Examples of logging (built into the core of XP)
 	 //log.info('%s', mainRegion);
 	 //log.info(regionLength);

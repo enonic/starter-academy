@@ -20,6 +20,7 @@ Use this starter with the "init-project" feature in the Enonic XP toolbox. Or ju
 
 **1.2.1**
 
+* Fixed broke XP fragment handling in default page component
 * Improvements, styling and bug fixes to part "Banner"
 * Added site filter to ImageSelector in part "Banner"
 * Minor adjustments and comments
