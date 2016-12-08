@@ -15,8 +15,13 @@ exports.get = function(req) {
     var content = libs.portal.getContent();
     var site = libs.portal.getSite();
 
-    // Extract the main region which contains component parts
-    var mainRegion = content.page.regions.main || null;
+	 // Fragment handling (single fragments should use this page controller automatically to render itself)
+	 var isFragment = content.type === 'portal:fragment';
+	 if (isFragment) {
+	 	mainRegion = null;
+	 } else {
+	 	mainRegion = content.page.regions.main;
+	 }
 
 	 // Count number of components in main region so that we can display the placeholder when empty
 	 var regionLength = mainRegion ? mainRegion.components.length : 0;
@@ -26,8 +31,6 @@ exports.get = function(req) {
 	 //log.info('%s', mainRegion);
 	 //log.info(regionLength);
 
-	 var isFragment = content.type === 'portal:fragment';
-	 if (isFragment) mainRegion = null;
 
     // Prepare the model that will be passed to the view
     var model = {
