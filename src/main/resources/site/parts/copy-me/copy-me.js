@@ -21,7 +21,7 @@ exports.get = function(req) {
 	var model = {
 		content: content,
 		component: component
-	}
+	};
 
 	/* ### Return ### */
 	return {

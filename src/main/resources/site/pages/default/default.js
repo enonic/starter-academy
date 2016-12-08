@@ -36,7 +36,7 @@ exports.get = function(req) {
 		  regions: regionLength,
 		  siteName: site.displayName,
 		  isFragment: isFragment
-    }
+    };
 
     // Render the dynamic HTML with values from the model
     var body = libs.thymeleaf.render(conf.view, model);
