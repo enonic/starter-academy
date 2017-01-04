@@ -10,22 +10,15 @@
 		<h1 data-th-text="${siteName}">Enonic Academy</h1>
 	</header>
 
-	<!--/* Placeholder for empty component list */-->
-	<div data-th-remove="tag" data-th-if="${regions == 0 and !isFragment}">
-		<!--<h1 data-th-text="${content.displayName}"></h1>-->
-		<p>The most empty site in the world!?</p>
-		<p><em>(Add any Component to this region <strong>and save draft</strong> to rid the world of this message)</em></p>
-	</div>
-
 	<div data-portal-region="main" class="xp-region" data-th-if="${!isFragment}">
-		<div data-th-remove="tag" data-th-if="${regions > 0 and !isFragment}">
+		<div data-th-if="${mainRegion}" data-th-remove="tag">
 			<div data-th-each="component : ${mainRegion.components}" data-th-remove="tag">
 				<div data-portal-component="${component.path}" data-th-remove="tag"></div>
 			</div>
 		</div>
 	</div>
 
-	<!-- render Fragment component -->
+	<!--/* Render Fragments (single view, supported with mappings in site.xml) */-->
 	<div data-th-if="${isFragment}" data-th-remove="tag">
 		<div data-portal-component="fragment" data-th-remove="tag"/>
 	</div>

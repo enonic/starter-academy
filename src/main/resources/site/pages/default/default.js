@@ -17,25 +17,17 @@ exports.get = function(req) {
 
 	 // Fragment handling (single fragments should use this page controller automatically to render itself)
 	 var isFragment = content.type === 'portal:fragment';
-	 if (isFragment) {
-	 	mainRegion = null;
-	 } else {
-	 	mainRegion = content.page.regions.main;
-	 }
-
-	 // Count number of components in main region so that we can display the placeholder when empty
-	 var regionLength = mainRegion ? mainRegion.components.length : 0;
+	 var mainRegion = isFragment ? null : content.page.regions.main;
 
 	 // Examples of logging (built into the core of XP)
-	 //log.info('%s', mainRegion);
-	 //log.info(regionLength);
-
+	 //log.info('A string');
+	 //log.info('%s', content); // JSON output as string
+	 //log.info('Pretty JSON %s', JSON.stringify(content, null, 4));
 
     // Prepare the model that will be passed to the view
     var model = {
 		  content: content,
 		  mainRegion: mainRegion,
-		  regions: regionLength,
 		  siteName: site.displayName,
 		  isFragment: isFragment
     };
