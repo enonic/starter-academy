@@ -18,9 +18,15 @@ Use this starter with the "init-project" feature in the Enonic XP toolbox. Or ju
 
 ## Changelog
 
+**1.2.2**
+
+* Remove placeholder in page component (simplified code)
+* Improved logging examples
+* Removed obsolete "data-portal"-attributes from Thymeleaf
+
 **1.2.1**
 
-* Fixed broke XP fragment handling in default page component
+* Fixed broken XP fragment handling in default page component
 * Improvements, styling and bug fixes to part "Banner"
 * Added site filter to ImageSelector in part "Banner"
 * Minor adjustments and comments
@@ -36,8 +42,6 @@ Use this starter with the "init-project" feature in the Enonic XP toolbox. Or ju
 **1.1.0**
 
 * Updated for Enonic XP 6.7
-
-## Changelog
 
 **1.0.0**
 
