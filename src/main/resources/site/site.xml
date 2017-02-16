@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-  <config/>
+  <config>
+	  <!-- Insert site-wide settings here -->
+  </config>
+
+  <!-- Used for Fragments to work, a XP Content Studio -->
   <mappings>
     <mapping controller="/site/pages/default/default.js">
       <match>type:'portal:fragment'</match>
