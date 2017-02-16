@@ -2,7 +2,9 @@
 <site>
   <config>
 	  <!-- Insert site-wide settings here -->
+	  <!-- Mixin of the type "inline" goes here -->
   </config>
+  <!-- Mixin of the type "x-data" goes here -->
 
   <!-- Used for Fragments to work, a XP Content Studio -->
   <mappings>

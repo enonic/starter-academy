@@ -10,5 +10,6 @@
       <label>Population</label>
       <occurrences minimum="0" maximum="1"/>
     </input>
+	 <!-- Mixin of the type "inline" goes here -->
   </form>
 </content-type>
