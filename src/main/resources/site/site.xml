@@ -6,7 +6,7 @@
   </config>
   <!-- Mixin of the type "x-data" goes here -->
 
-  <!-- Used for Fragments to work, a XP Content Studio -->
+  <!-- Used for Fragments to work in XP Content Studio preview -->
   <mappings>
     <mapping controller="/site/pages/default/default.js">
       <match>type:'portal:fragment'</match>
