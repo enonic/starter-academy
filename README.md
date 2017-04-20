@@ -18,6 +18,11 @@ Use this starter with the "init-project" feature in the Enonic XP toolbox. Or ju
 
 ## Changelog
 
+**1.2.3**
+
+* Gradients and styling for header and footer elements
+* Ability to toggle border colors on or off (standard off)
+
 **1.2.2**
 
 * Remove placeholder in page component (simplified code)
@@ -30,6 +35,7 @@ Use this starter with the "init-project" feature in the Enonic XP toolbox. Or ju
 * Improvements, styling and bug fixes to part "Banner"
 * Added site filter to ImageSelector in part "Banner"
 * Minor adjustments and comments
+* Upgraded to Enonic XP 6.9
 
 **1.2.0**
 
