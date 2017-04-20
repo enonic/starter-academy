@@ -10,18 +10,18 @@
 		<h1 data-th-text="${siteName}">Enonic Academy</h1>
 	</header>
 
-	<div data-portal-region="main" class="xp-region" data-th-if="${!isFragment}">
+	<main data-portal-region="main" class="xp-region" data-th-if="${!isFragment}">
 		<div data-th-if="${mainRegion}" data-th-remove="tag">
 			<div data-th-each="component : ${mainRegion.components}" data-th-remove="tag">
 				<div data-portal-component="${component.path}" data-th-remove="tag"></div>
 			</div>
 		</div>
-	</div>
+	</main>
 
 	<!--/* Render Fragments (single view, supported with mappings in site.xml) */-->
-	<div data-th-if="${isFragment}" data-th-remove="tag">
+	<main data-th-if="${isFragment}" data-th-remove="tag">
 		<div data-portal-component="fragment" data-th-remove="tag"/>
-	</div>
+	</main>
 
 	<footer>
 		<p>Copyright forever</p>

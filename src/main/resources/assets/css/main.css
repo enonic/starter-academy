@@ -2,36 +2,43 @@ html, body {
 	margin: 0;
 	padding: 0;
 	font-family: Arial, sans-serif;
+	background-color: #cccccc;
 }
-.xp-page, .xp-region, .xp-layout, .xp-part {
+.xp-region, .xp-layout, .xp-part {
 	padding: 6px;
 }
-.xp-page {
+.xp-page.colorize {
 	/*background-color: */
 	border: 5px solid #cccccc;
 }
-.xp-region {
+.colorize .xp-region {
 	border: 5px solid #d9d2e9;
 }
-.xp-layout {
+.colorize .xp-layout {
 	border: 5px solid #cfe2f3;
 	overflow: hidden;
 }
-.xp-part {
+.colorize .xp-part {
 	border: 5px solid #b6d7a8;
 }
 
 body > header {
 	background-color: #cccccc;
+	background-image: linear-gradient(to bottom, #cccccc, #999999);
 	color: white;
-	padding: 8px;
-	margin-bottom: 6px;
+	text-shadow: 1px 1px 4px black;
+	padding: 12px;
 }
 body > footer {
 	background-color: #cccccc;
+	background-image: linear-gradient(to top, #cccccc, #999999);
 	color: white;
-	padding: 8px;
-	margin-top: 6px;
+	padding: 12px;
+}
+
+body > main {
+	padding: 12px;
+	background-color: white;
 }
 
 .cities {
