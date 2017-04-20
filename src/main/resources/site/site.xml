@@ -2,6 +2,12 @@
 <site>
   <config>
 	  <!-- Insert site-wide settings here -->
+	  <input type="CheckBox" name="colorize">
+		  <label>Colorize component borders?</label>
+		  <occurrences minimum="0" maximum="1"/>
+		  <default>false</default>
+		  <help-text>Adds a colored border to all XP components so it is easier to overview what is what.</help-text>
+	  </input>
 	  <!-- Mixin of the type "inline" goes here -->
   </config>
   <!-- Mixin of the type "x-data" goes here -->

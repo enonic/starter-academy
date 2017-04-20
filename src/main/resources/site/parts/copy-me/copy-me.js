@@ -17,6 +17,11 @@ exports.get = function(req) {
 	/* ### Manipulate ### */
 	// TODO: if needed, manipulate the collected data here
 
+	// Examples of logging (built into the core of XP)
+	//log.info('A string');
+	//log.info('%s', content); // JSON output as string
+	//log.info('Pretty JSON %s', JSON.stringify(content, null, 4));
+
 	/* ### Prepare ### */
 	var model = {
 		content: content,
