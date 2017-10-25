@@ -68,8 +68,11 @@ body > main {
 .banner .overlay h3 {
 	margin-bottom: 15px;
 }
+.xp-layout {
+	display: flex;
+}
 .xp-layout .xp-region {
-	float: left;
-	width: 47%;
+	flex: auto;
+	width: 50%;
 	box-sizing: content-box;
 }

@@ -9,7 +9,7 @@ xp {
 
 app {
     name = project.ext.appName
-    displayName = project.ext.displayName
+    displayName = 'Enonic Academy'
     vendorName = 'Enonic AS'
     vendorUrl = 'http://enonic.com'
 }
