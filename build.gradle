@@ -6,7 +6,7 @@ plugins {
 // Meta-data for our App, used in XP to display useful information to the user.
 app {
     name = project.appName
-    displayName = 'Enonic Academy'
+    displayName = 'Enonic Academy' // Usually, this line and the following two, are the ones you will edit. As well as giving your app jar-file a proper name in the gradle.properties file.
     vendorName = 'Enonic AS'
     vendorUrl = 'http://enonic.com'
 	 systemVersion = xpVersion
@@ -22,6 +22,7 @@ dependencies {
     include "com.enonic.xp:lib-thymeleaf:${xpVersion}"
 }
 
+// Where to look for the libraries we're using.
 repositories {
     mavenLocal()
     jcenter()
