@@ -1,6 +1,6 @@
 # Enonic Academy starter
 
-This starter kit serves as the base for all our developer courses at the Enonic Academy. It kickstarts the students with a few parts, content-types, a page, and also some content. It's loosely based on "[My First App](http://xp.readthedocs.org/en/6.12/tutorials/my-first-app/index.html)" from the documentation.
+This starter kit serves as the base for all our developer courses at the Enonic Academy. It kickstarts the students with a few parts, content-types, a page, and also some content. It's loosely based on "[My First App](http://xp.readthedocs.org/en/6.13/tutorials/my-first-app/index.html)" from the documentation.
 
 This software is made available as-is.
 
@@ -12,6 +12,7 @@ Use this starter with the "init-project" feature in the Enonic XP toolbox. Or ju
 
 | Version        | XP version |
 | ------------- | ------------- |
+| 1.2.5 | 6.13.1 |
 | 1.2.4 | 6.12.1 |
 | 1.2.3 | 6.9.0 |
 | 1.2.2 | 6.9.0 |
@@ -21,6 +22,13 @@ Use this starter with the "init-project" feature in the Enonic XP toolbox. Or ju
 | 1.0.0 | 6.5.0 |
 
 ## Changelog
+
+**1.2.5**
+
+* Improve comments around Gradle-code.
+* Upgrade to 6.13.
+* Upgrade all Gradle-code to latest.
+* Improve Thymeleaf examples.
 
 **1.2.4**
 
