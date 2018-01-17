@@ -1,10 +1,6 @@
 plugins {
-    id 'java'
+    id 'java' // Needed to run Java in the app (this app uses Java to generate the demo site content).
     id 'com.enonic.xp.app' version '1.0.15' // A plugin developed by Enonic that adds some needed things to Gradle and makes app-building easier. It is required to use in any Enonic App.
-}
-
-xp {
-  version = xpVersion
 }
 
 // Meta-data for our App, used in XP to display useful information to the user.
@@ -13,6 +9,7 @@ app {
     displayName = 'Enonic Academy'
     vendorName = 'Enonic AS'
     vendorUrl = 'http://enonic.com'
+	 systemVersion = xpVersion
 }
 
 // This is where we "Install" new libraries. Check correct path in our docs, or the lib's github readme.
