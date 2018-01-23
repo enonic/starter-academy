@@ -1,5 +1,4 @@
 plugins {
-    id 'java' // Needed to run Java in the app (this app uses Java to generate the demo site content).
     id 'com.enonic.xp.app' version '1.0.17' // A plugin developed by Enonic that adds some needed things to Gradle and makes app-building easier. It is required to use in any Enonic App.
 }
 
