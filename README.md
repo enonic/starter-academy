@@ -12,6 +12,7 @@ Use this starter with the "init-project" feature in the Enonic XP toolbox. Or ju
 
 | Version        | XP version |
 | ------------- | ------------- |
+| 1.2.6 | 6.13.1 |
 | 1.2.5 | 6.13.1 |
 | 1.2.4 | 6.12.1 |
 | 1.2.3 | 6.9.0 |
@@ -22,6 +23,10 @@ Use this starter with the "init-project" feature in the Enonic XP toolbox. Or ju
 | 1.0.0 | 6.5.0 |
 
 ## Changelog
+
+**1.2.6**
+
+* Removed java plugin from gradle file
 
 **1.2.5**
 
