@@ -10,26 +10,25 @@ import org.osgi.service.component.annotations.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.enonic.xp.app.ApplicationKey;
 import com.enonic.xp.content.ApplyContentPermissionsParams;
 import com.enonic.xp.content.Content;
 import com.enonic.xp.content.ContentConstants;
 import com.enonic.xp.content.ContentPath;
 import com.enonic.xp.content.ContentService;
 import com.enonic.xp.content.UpdateContentParams;
+import com.enonic.xp.context.Context;
 import com.enonic.xp.context.ContextAccessor;
 import com.enonic.xp.context.ContextBuilder;
-import com.enonic.xp.context.Context;
 import com.enonic.xp.export.ExportService;
 import com.enonic.xp.export.ImportNodesParams;
 import com.enonic.xp.export.NodeImportResult;
 import com.enonic.xp.index.IndexService;
 import com.enonic.xp.node.NodePath;
+import com.enonic.xp.security.IdProviderKey;
 import com.enonic.xp.security.PrincipalKey;
 import com.enonic.xp.security.RoleKeys;
 import com.enonic.xp.security.SecurityService;
 import com.enonic.xp.security.User;
-import com.enonic.xp.security.UserStoreKey;
 import com.enonic.xp.security.acl.AccessControlEntry;
 import com.enonic.xp.security.acl.AccessControlList;
 import com.enonic.xp.security.acl.Permission;
@@ -59,7 +58,7 @@ public class DemoInitializer
 
     private final Logger LOG = LoggerFactory.getLogger( DemoInitializer.class );
 
-    private static final PrincipalKey SUPER_USER_KEY = PrincipalKey.ofUser( UserStoreKey.system(), "su" );
+    private static final PrincipalKey SUPER_USER_KEY = PrincipalKey.ofUser( IdProviderKey.system(), "su" );
 
     @Activate
     public void initialize()
@@ -94,23 +93,21 @@ public class DemoInitializer
         }
 
         final Bundle bundle = FrameworkUtil.getBundle( this.getClass() );
-        final ApplicationKey appKey = ApplicationKey.from( bundle );
 
         final VirtualFile source = VirtualFiles.from( bundle, "/import" );
-        final VirtualFile xsltTransformer = VirtualFiles.from( bundle, "/import/replace_app.xsl" );
 
         final NodeImportResult nodeImportResult = this.exportService.importNodes( ImportNodesParams.create().
             source( source ).
             targetNodePath( NodePath.create( "/content" ).build() ).
             includeNodeIds( true ).
+            includePermissions( true ).
             dryRun( false ).
-            xslt( xsltTransformer ).
-            xsltParam( "applicationId", appKey.toString() ).
             build() );
 
         logImport( nodeImportResult );
 
         // set permissions
+		  /*
         final Content demoContent = contentService.getByPath( demoSitePath );
         if ( demoContent != null )
         {
@@ -127,6 +124,7 @@ public class DemoInitializer
                 overwriteChildPermissions( true ).
                 build() );
         }
+		  */
     }
 
     private void logImport( final NodeImportResult nodeImportResult )
