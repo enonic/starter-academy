@@ -42,5 +42,5 @@ exports.get = function (req) {
     // Return the response object
     return {
         body: libThymeleaf.render(resolve('city-list.html'), model)
-    }
+    };
 };

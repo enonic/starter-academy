@@ -23,11 +23,8 @@ exports.get = function(req) {
 		  colorize: colorize
     };
 
-    // Render the dynamic HTML with values from the model
-    var body = libThymeleaf.render(resolve('default.html'), model);
-
     // Return the response object
     return {
-        body: body
-    }
+        body: libThymeleaf.render(resolve('default.html'), model); // Render the dynamic HTML with values from the model
+    };
 };

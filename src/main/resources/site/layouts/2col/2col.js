@@ -12,12 +12,9 @@ exports.get = function(req) {
 		rightRegion: component.regions["right"]
 	};
 
-	// Render a thymeleaf template
-	var body = libThymeleaf.render(resolve('2col.html'), model);
-
-	// Return the result
+	// Return the result and the rendered HTML
 	return {
-		body: body
+		body: libThymeleaf.render(resolve('2col.html'), model);
 	};
 
 };

@@ -17,5 +17,5 @@ exports.get = function(req) {
     // Return the merged view and model in the response object
     return {
         body: libThymeleaf.render(resolve('country.html'), model)
-    }
+    };
 };
