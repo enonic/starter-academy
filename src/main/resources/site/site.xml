@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-  <config>
+  <form>
 	  <!-- Insert site-wide settings here -->
 	  <input type="CheckBox" name="colorize">
 		  <label>Colorize component borders?</label>
@@ -9,7 +9,7 @@
 		  <help-text>Adds a colored border to all XP components so it is easier to overview what is what.</help-text>
 	  </input>
 	  <!-- Mixin of the type "inline" goes here -->
-  </config>
+  </form>
   <!-- Mixin of the type "x-data" goes here -->
 
   <!-- Used for Fragments to work in XP Content Studio preview -->

@@ -1,20 +1,13 @@
-var libs = {
-	portal: require('/lib/xp/portal'), // Import the portal functions
-	thymeleaf: require('/lib/xp/thymeleaf') // Import the Thymeleaf rendering function
-};
-
-// Specify the view file to use
-var conf = {
-	view: resolve('default.html')
-};
+var libPortal = require('/lib/xp/portal'); // Import the portal functions
+var libThymeleaf = require('/lib/thymeleaf'); // Import the Thymeleaf rendering function
 
 // Handle the GET request
 exports.get = function(req) {
 
     // Get the content that is using the page
-    var content = libs.portal.getContent();
-    var site = libs.portal.getSite();
-    var config = libs.portal.getSiteConfig();
+    var content = libPortal.getContent();
+    var site = libPortal.getSite();
+    var config = libPortal.getSiteConfig();
 
 	 // Fragment handling (single fragments should use this page controller automatically to render itself)
 	 var isFragment = content.type === 'portal:fragment';
@@ -31,7 +24,7 @@ exports.get = function(req) {
     };
 
     // Render the dynamic HTML with values from the model
-    var body = libs.thymeleaf.render(conf.view, model);
+    var body = libThymeleaf.render(resolve('default.html'), model);
 
     // Return the response object
     return {

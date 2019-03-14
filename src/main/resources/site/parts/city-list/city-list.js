@@ -1,21 +1,14 @@
-var libs = {
-	portal: require('/lib/xp/portal'), // Import the portal functions
-	content: require('/lib/xp/content'), // Import the content library functions
-	thymeleaf: require('/lib/xp/thymeleaf') // Import the Thymeleaf rendering function
-};
-
-// Specify the view file to use
-var conf = {
-	view: resolve('city-list.html')
-};
+var libPortal = require('/lib/xp/portal'); // Import the portal functions
+var libContent = require('/lib/xp/content'); // Import the content library functions
+var libThymeleaf = require('/lib/thymeleaf'); // Import the Thymeleaf rendering function
 
 // Handle the GET request
 exports.get = function (req) {
 
-    var countryPath = libs.portal.getContent()._path;
+    var countryPath = libPortal.getContent()._path;
 
     // Get all the country's cities
-    var result = libs.content.query({
+    var result = libContent.query({
         start: 0,
         count: 100,
         contentTypes: [
@@ -48,6 +41,6 @@ exports.get = function (req) {
 
     // Return the response object
     return {
-        body: libs.thymeleaf.render(conf.view, model)
+        body: libThymeleaf.render(resolve('city-list.html'), model)
     }
 };

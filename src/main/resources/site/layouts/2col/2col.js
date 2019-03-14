@@ -1,17 +1,10 @@
-var libs = {
-	portal: require('/lib/xp/portal'),
-	thymeleaf: require('/lib/xp/thymeleaf')
-};
-
-// Specify the view file to use
-var conf = {
-	view: resolve('2col.html')
-};
+var libPortal = require('/lib/xp/portal');
+var libThymeleaf = require('/lib/thymeleaf');
 
 exports.get = function(req) {
 
 	// Find the current component.
-	var component = libs.portal.getComponent();
+	var component = libPortal.getComponent();
 
 	// Define the model
 	var model = {
@@ -20,7 +13,7 @@ exports.get = function(req) {
 	};
 
 	// Render a thymeleaf template
-	var body = libs.thymeleaf.render(conf.view, model);
+	var body = libThymeleaf.render(resolve('2col.html'), model);
 
 	// Return the result
 	return {
