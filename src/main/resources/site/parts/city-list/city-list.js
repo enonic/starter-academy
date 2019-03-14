@@ -2,6 +2,8 @@ var libPortal = require('/lib/xp/portal'); // Import the portal functions
 var libContent = require('/lib/xp/content'); // Import the content library functions
 var libThymeleaf = require('/lib/thymeleaf'); // Import the Thymeleaf rendering function
 
+var viewFile = resolve('city-list.html');
+
 // Handle the GET request
 exports.get = function (req) {
 
@@ -41,6 +43,6 @@ exports.get = function (req) {
 
     // Return the response object
     return {
-        body: libThymeleaf.render(resolve('city-list.html'), model)
+        body: libThymeleaf.render(viewFile, model)
     };
 };

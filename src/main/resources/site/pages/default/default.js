@@ -1,6 +1,8 @@
 var libPortal = require('/lib/xp/portal'); // Import the portal functions
 var libThymeleaf = require('/lib/thymeleaf'); // Import the Thymeleaf rendering function
 
+var viewFile = resolve('default.html');
+
 // Handle the GET request
 exports.get = function(req) {
 
@@ -23,8 +25,8 @@ exports.get = function(req) {
 		  colorize: colorize
     };
 
-    // Return the response object
+    // Return a response from the server to the client
     return {
-        body: libThymeleaf.render(resolve('default.html'), model); // Render the dynamic HTML with values from the model
+        body: libThymeleaf.render(viewFile, model); // Render the dynamic HTML with values from the model
     };
 };

@@ -2,6 +2,8 @@ var libPortal = require('/lib/xp/portal');
 var libContent = require('/lib/xp/content');
 var libThymeleaf = require('/lib/thymeleaf');
 
+var viewFile = resolve('copy-me.html'), // TODO: This is not the view-file you're looking for ... or is it?
+
 exports.get = function(req) {
 
 	/* ### Collect ### */
@@ -24,10 +26,7 @@ exports.get = function(req) {
 
 	/* ### Return ### */
 	return {
-		body: libThymeleaf.render(
-			resolve('copy-me.html'), // TODO: This is not the view-file you're looking for ... or is it?
-			model
-		)
+		body: libThymeleaf.render(viewFile, model)
 	};
 
 };

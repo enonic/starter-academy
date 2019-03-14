@@ -1,6 +1,8 @@
 var libPortal = require('/lib/xp/portal');
 var libThymeleaf = require('/lib/thymeleaf');
 
+var viewFile = resolve('2col.html');
+
 exports.get = function(req) {
 
 	// Find the current component.
@@ -14,7 +16,7 @@ exports.get = function(req) {
 
 	// Return the result and the rendered HTML
 	return {
-		body: libThymeleaf.render(resolve('2col.html'), model);
+		body: libThymeleaf.render(viewFile, model);
 	};
 
 };

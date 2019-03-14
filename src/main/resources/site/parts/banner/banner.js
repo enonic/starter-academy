@@ -1,6 +1,8 @@
 var libPortal = require('/lib/xp/portal');
 var libThymeleaf = require('/lib/thymeleaf');
 
+var viewFile = resolve('banner.html');
+
 exports.get = function(req) {
 
 	/* ### Collect ### */
@@ -24,7 +26,7 @@ exports.get = function(req) {
 
 	/* ### Return ### */
 	return {
-		body: libThymeleaf.render(resolve('banner.html'), model)
+		body: libThymeleaf.render(viewFile, model)
 	};
 
 };
