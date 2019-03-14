@@ -27,6 +27,6 @@ exports.get = function(req) {
 
     // Return a response from the server to the client
     return {
-        body: libThymeleaf.render(viewFile, model); // Render the dynamic HTML with values from the model
+        body: libThymeleaf.render(viewFile, model) // Render the dynamic HTML with values from the model
     };
 };

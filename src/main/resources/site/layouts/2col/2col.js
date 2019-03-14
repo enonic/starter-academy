@@ -16,7 +16,7 @@ exports.get = function(req) {
 
 	// Return the result and the rendered HTML
 	return {
-		body: libThymeleaf.render(viewFile, model);
+		body: libThymeleaf.render(viewFile, model)
 	};
 
 };
