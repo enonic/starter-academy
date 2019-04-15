@@ -1,6 +1,7 @@
 <content-type>
   <display-name>Country</display-name>
   <super-type>base:structured</super-type>
+  <description>Spawn new countries from Content Studio</description>
   <form>
     <input type="TextArea" name="description">
       <label>Description</label>

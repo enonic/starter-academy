@@ -1,7 +1,7 @@
 <part>
 	<display-name>Banner</display-name>
 	<description>Call to actions</description>
-	<config>
+	<form>
 		<input type="TextLine" name="header">
 			<label>Header</label>
 			<occurrences minimum="0" maximum="1"/>
@@ -19,5 +19,5 @@
 				<allowPath>${site}/*</allowPath>
 			</config>
 		</input>
-	</config>
+	</form>
 </part>

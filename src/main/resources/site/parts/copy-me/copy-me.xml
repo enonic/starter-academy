@@ -1,7 +1,7 @@
 <part>
 	<display-name>TODO: Update this name!</display-name>
 	<description>TODO: Optional field - describe the component</description>
-	<config>
+	<form>
 		<!-- TODO: Place any number of input types inside here ... or not =) Up to you -->
-	</config>
+	</form>
 </part>

@@ -1,6 +1,7 @@
 <content-type>
   <display-name>City</display-name>
   <super-type>base:structured</super-type>
+  <description>Build cities in Content Studio</description>
   <form>
     <input type="GeoPoint" name="location">
       <label>Location</label>
