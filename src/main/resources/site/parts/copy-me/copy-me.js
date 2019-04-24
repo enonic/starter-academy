@@ -2,7 +2,7 @@ var libPortal = require('/lib/xp/portal');
 var libContent = require('/lib/xp/content');
 var libThymeleaf = require('/lib/thymeleaf');
 
-var viewFile = resolve('copy-me.html'), // TODO: This is not the view-file you're looking for ... or is it?
+var viewFile = resolve('copy-me.html'); // TODO: This is not the view-file you're looking for ... or is it?
 
 exports.get = function(req) {
 
