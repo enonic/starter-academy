@@ -19,6 +19,7 @@ hs_err_pid*
 .gradle
 build/
 .sass-cache/
+.enonic
 
 # Ignore Gradle GUI config
 gradle-app.setting
