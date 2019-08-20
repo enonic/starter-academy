@@ -1,5 +1,6 @@
 <layout>
   <display-name>2 columns</display-name>
+  <description></description>
   <form/>
   <regions>
     <region name="left"/>

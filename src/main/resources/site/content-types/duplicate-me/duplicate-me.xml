@@ -1,6 +1,6 @@
 <content-type>
 	<display-name>TODO: Give this a name!</display-name>
-	<description>Optional: Give it a description</description>
+	<!--description>Optional: Give it a description</description-->
 	<super-type>base:structured</super-type>
     <description>TODO: Optional description</description>
 	<form>
