@@ -12,6 +12,7 @@ Use this starter with the "init-project" feature in the Enonic XP toolbox. Or ju
 
 | Version        | XP version |
 | ------------- | ------------- |
+| 2.0.0 | 7.0.0 |
 | 1.2.6 | 6.13.1 |
 | 1.2.5 | 6.13.1 |
 | 1.2.4 | 6.12.1 |
@@ -23,6 +24,8 @@ Use this starter with the "init-project" feature in the Enonic XP toolbox. Or ju
 | 1.0.0 | 6.5.0 |
 
 ## Changelog
+
+**2.0.0** Updated to support enonic XP 7
 
 **1.2.6**
 
