@@ -1,21 +1,8 @@
 package com.enonic.xp.demo.initializer;
 
-import java.util.concurrent.Callable;
-
-import org.osgi.framework.Bundle;
-import org.osgi.framework.FrameworkUtil;
-import org.osgi.service.component.annotations.Activate;
-import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.Reference;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.enonic.xp.content.ApplyContentPermissionsParams;
-import com.enonic.xp.content.Content;
 import com.enonic.xp.content.ContentConstants;
 import com.enonic.xp.content.ContentPath;
 import com.enonic.xp.content.ContentService;
-import com.enonic.xp.content.UpdateContentParams;
 import com.enonic.xp.context.Context;
 import com.enonic.xp.context.ContextAccessor;
 import com.enonic.xp.context.ContextBuilder;
@@ -35,6 +22,16 @@ import com.enonic.xp.security.acl.Permission;
 import com.enonic.xp.security.auth.AuthenticationInfo;
 import com.enonic.xp.vfs.VirtualFile;
 import com.enonic.xp.vfs.VirtualFiles;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.FrameworkUtil;
+import org.osgi.service.component.annotations.Activate;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.List;
+import java.util.concurrent.Callable;
 
 
 @Component(immediate = true)
@@ -141,10 +138,15 @@ public class DemoInitializer
         nodeImportResult.getExportedBinaries().forEach( LOG::info );
 
         LOG.info( "-------------------" );
-        LOG.info( "Errors:" );
-        for ( final NodeImportResult.ImportError importError : nodeImportResult.getImportErrors() )
-        {
-            LOG.info( importError.getMessage(), importError.getException() );
+
+        List<NodeImportResult.ImportError> errors = nodeImportResult.getImportErrors();
+        if (errors != null && errors.size() > 0) {
+            LOG.warn( "Errors:" );
+            for ( final NodeImportResult.ImportError importError : nodeImportResult.getImportErrors() )
+            {
+                LOG.warn( importError.getMessage(), importError.getException() );
+            }
+            LOG.info( "-------------------" );
         }
     }
 
