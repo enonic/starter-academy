@@ -8,9 +8,10 @@
 		  <default>false</default>
 		  <help-text>Adds a colored border to all XP components so it is easier to overview what is what.</help-text>
 	  </input>
-	  <!-- Mixin of the type "inline" goes here -->
+	  <!-- Mixin goes here -->
   </form>
-  <!-- Mixin of the type "x-data" goes here -->
+
+  <!-- X-data goes here -->
 
   <!-- Used for Fragments to work in XP Content Studio preview -->
   <mappings>
