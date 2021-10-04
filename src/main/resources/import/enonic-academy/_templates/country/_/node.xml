@@ -2,12 +2,36 @@
     <id>c00bf84e-717e-4b1f-9410-d0e4657bf971</id>
     <childOrder>modifiedtime DESC</childOrder>
     <nodeType>content</nodeType>
-    <timestamp>2015-12-01T12:48:20.450Z</timestamp>
+    <timestamp>2021-10-04T09:46:17.330Z</timestamp>
     <inheritPermissions>true</inheritPermissions>
     <permissions>
-        <principal key="role:cms.cm.app">
+        <principal key="role:cms.project.starter-academy.owner">
             <allow type="array">
                 <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+                <value>PUBLISH</value>
+                <value>READ_PERMISSIONS</value>
+                <value>WRITE_PERMISSIONS</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:cms.project.starter-academy.contributor">
+            <allow type="array">
+                <value>READ</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:cms.project.starter-academy.editor">
+            <allow type="array">
+                <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+                <value>PUBLISH</value>
+                <value>READ_PERMISSIONS</value>
+                <value>WRITE_PERMISSIONS</value>
             </allow>
             <deny type="array"/>
         </principal>
@@ -35,46 +59,68 @@
             </allow>
             <deny type="array"/>
         </principal>
+        <principal key="role:cms.project.starter-academy.viewer">
+            <allow type="array">
+                <value>READ</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:cms.project.starter-academy.author">
+            <allow type="array">
+                <value>READ</value>
+                <value>CREATE</value>
+                <value>MODIFY</value>
+                <value>DELETE</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
+        <principal key="role:system.everyone">
+            <allow type="array">
+                <value>READ</value>
+            </allow>
+            <deny type="array"/>
+        </principal>
     </permissions>
     <data>
         <boolean name="valid">true</boolean>
         <string name="displayName">Country</string>
         <string name="type">portal:page-template</string>
         <string name="owner">user:system:su</string>
-        <dateTime name="modifiedTime">2015-12-01T12:48:20.449Z</dateTime>
-        <string name="modifier">user:system:su</string>
+        <dateTime name="modifiedTime">2021-10-04T09:46:17.327Z</dateTime>
+        <string name="modifier">user:system:pkw</string>
         <string name="creator">user:system:su</string>
         <dateTime name="createdTime">2015-11-26T15:14:55.936Z</dateTime>
+        <property-set name="publish">
+            <dateTime isNull="true" name="first"/>
+            <dateTime isNull="true" name="from"/>
+            <dateTime isNull="true" name="to"/>
+        </property-set>
+        <property-set name="workflow">
+            <string name="state">IN_PROGRESS</string>
+            <property-set name="checks"/>
+        </property-set>
         <property-set name="data">
             <string name="supports">com.enonic.starter.academy:country</string>
         </property-set>
-        <property-set name="page">
-            <string name="controller">com.enonic.starter.academy:default</string>
-            <reference isNull="true" name="template"/>
-            <property-set name="region">
-                <string name="name">main</string>
-                <property-set name="component">
-                    <string name="type">PartComponent</string>
-                    <property-set name="PartComponent">
-                        <string name="name">country</string>
-                        <string name="template">com.enonic.starter.academy:country</string>
-                        <property-set name="config"/>
-                    </property-set>
-                </property-set>
-                <property-set name="component">
-                    <string name="type">PartComponent</string>
-                    <property-set name="PartComponent">
-                        <string name="name">City list</string>
-                        <string name="template">com.enonic.starter.academy:city-list</string>
-                        <property-set name="config">
-                            <string name="mapType">HYBRID</string>
-                            <string name="zoom">12</string>
-                        </property-set>
+        <property-set name="components">
+            <string name="type">page</string>
+            <string name="path">/</string>
+            <property-set name="page">
+                <string name="descriptor">com.enonic.starter.academy:default</string>
+                <boolean name="customized">false</boolean>
+                <property-set name="config">
+                    <property-set name="com-enonic-starter-academy">
+                        <property-set name="default"/>
                     </property-set>
                 </property-set>
             </property-set>
-            <property-set name="config"/>
-            <boolean name="customized">false</boolean>
+        </property-set>
+        <property-set name="components">
+            <string name="type">part</string>
+            <string name="path">/main/0</string>
+            <property-set name="part">
+                <string name="descriptor">com.enonic.starter.academy:country</string>
+            </property-set>
         </property-set>
     </data>
     <indexConfigs>
@@ -89,13 +135,23 @@
         <pathIndexConfigs>
             <pathIndexConfig>
                 <indexConfig>
-                    <decideByType>false</decideByType>
-                    <enabled>false</enabled>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
                     <nGram>false</nGram>
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>page.regions</path>
+                <path>components.part.config.com-enonic-starter-academy.country</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data.siteConfig.applicationkey</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -108,7 +164,7 @@
                         <indexValueProcessor>htmlStripper</indexValueProcessor>
                     </indexValueProcessors>
                 </indexConfig>
-                <path>data.htmlarea_text</path>
+                <path>components.text.value</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -118,7 +174,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>modifier</path>
+                <path>components.part.descriptor</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -128,7 +184,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>owner</path>
+                <path>components.page.template</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -138,7 +194,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>attachment</path>
+                <path>components.page.descriptor</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -148,7 +204,37 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>x</path>
+                <path>components.page.customized</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.layout.descriptor</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.image.id</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components.fragment.id</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -158,7 +244,17 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>data</path>
+                <path>x.*</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>true</nGram>
+                    <fulltext>true</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>attachment.text</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -168,7 +264,7 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>page</path>
+                <path>type</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -188,7 +284,37 @@
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>type</path>
+                <path>owner</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>modifier</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>modifiedTime</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>true</decideByType>
+                    <enabled>true</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>data</path>
             </pathIndexConfig>
             <pathIndexConfig>
                 <indexConfig>
@@ -213,13 +339,24 @@
             <pathIndexConfig>
                 <indexConfig>
                     <decideByType>false</decideByType>
+                    <enabled>false</enabled>
+                    <nGram>false</nGram>
+                    <fulltext>false</fulltext>
+                    <includeInAllText>false</includeInAllText>
+                </indexConfig>
+                <path>components</path>
+            </pathIndexConfig>
+            <pathIndexConfig>
+                <indexConfig>
+                    <decideByType>false</decideByType>
                     <enabled>true</enabled>
                     <nGram>false</nGram>
                     <fulltext>false</fulltext>
                     <includeInAllText>false</includeInAllText>
                 </indexConfig>
-                <path>modifiedTime</path>
+                <path>attachment</path>
             </pathIndexConfig>
         </pathIndexConfigs>
+        <allTextIndexConfig/>
     </indexConfigs>
 </node>
