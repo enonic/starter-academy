@@ -1,16 +1,16 @@
-var libPortal = require('/lib/xp/portal'); // Import the portal functions
-var libThymeleaf = require('/lib/thymeleaf'); // Import the Thymeleaf rendering function
+const libPortal = require('/lib/xp/portal'); // Import the portal functions
+const libThymeleaf = require('/lib/thymeleaf'); // Import the Thymeleaf rendering function
 
-var viewFile = resolve('country.html');
+const viewFile = resolve('country.html');
 
 // Handle the GET request
 exports.get = function(req) {
 
     // Get the country content and extract the needed data from the JSON
-    var content = libPortal.getContent();
+    const content = libPortal.getContent();
 
     // Prepare the model object with the needed data extracted from the content
-    var model = {
+    const model = {
         name: content.displayName,
         description: content.data.description,
         population: content.data.population
