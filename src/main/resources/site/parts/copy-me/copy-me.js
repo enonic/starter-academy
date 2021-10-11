@@ -1,14 +1,14 @@
-var libPortal = require('/lib/xp/portal');
-var libContent = require('/lib/xp/content');
-var libThymeleaf = require('/lib/thymeleaf');
+const libPortal = require('/lib/xp/portal');
+const libContent = require('/lib/xp/content');
+const libThymeleaf = require('/lib/thymeleaf');
 
-var viewFile = resolve('copy-me.html'); // TODO: This is not the view-file you're looking for ... or is it?
+const viewFile = resolve('copy-me.html'); // TODO: This is not the view-file you're looking for ... or is it?
 
 exports.get = function(req) {
 
 	/* ### Collect ### */
-	var content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
-	var component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.
+	const content = libPortal.getContent(); // Get current content that is viewed. See the docs for JSON format.
+	const component = libPortal.getComponent(); // Or, get config (if any) for this particular part. See the docs for JSON format.
 
 	/* ### Manipulate ### */
 	// TODO: if needed, manipulate the collected data here
@@ -19,9 +19,9 @@ exports.get = function(req) {
 	//log.info('Pretty JSON %s', JSON.stringify(content, null, 4));
 
 	/* ### Prepare ### */
-	var model = {
-		content: content,
-		component: component
+	const model = {
+		content,
+		component,
 	};
 
 	/* ### Return ### */

@@ -1,13 +1,13 @@
-var libPortal = require('/lib/xp/portal');
-var libThymeleaf = require('/lib/thymeleaf');
+const libPortal = require('/lib/xp/portal');
+const libThymeleaf = require('/lib/thymeleaf');
 
-var viewFile = resolve('banner.html');
+const viewFile = resolve('banner.html');
 
 exports.get = function(req) {
 
 	/* ### Collect ### */
-	var component = libPortal.getComponent();
-	var config = component.config;
+	const component = libPortal.getComponent();
+	const config = component.config;
 
 	/* ### Manipulate ### */
 	// Make sure you check for actual values (not null) before running any portal function (as they crash on null).
@@ -20,8 +20,8 @@ exports.get = function(req) {
 	}
 
 	/* ### Prepare ### */
-	var model = {
-		config: config
+	const model = {
+		config
 	};
 
 	/* ### Return ### */

@@ -1,15 +1,15 @@
-var libPortal = require('/lib/xp/portal');
-var libThymeleaf = require('/lib/thymeleaf');
+const libPortal = require('/lib/xp/portal');
+const libThymeleaf = require('/lib/thymeleaf');
 
-var viewFile = resolve('2col.html');
+const viewFile = resolve('2col.html');
 
 exports.get = function(req) {
 
 	// Find the current component.
-	var component = libPortal.getComponent();
+	const component = libPortal.getComponent();
 
 	// Define the model
-	var model = {
+	const model = {
 		leftRegion: component.regions["left"],
 		rightRegion: component.regions["right"]
 	};

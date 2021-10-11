@@ -1,16 +1,16 @@
-var libPortal = require('/lib/xp/portal'); // Import the portal functions
-var libContent = require('/lib/xp/content'); // Import the content library functions
-var libThymeleaf = require('/lib/thymeleaf'); // Import the Thymeleaf rendering function
+const libPortal = require('/lib/xp/portal'); // Import the portal functions
+const libContent = require('/lib/xp/content'); // Import the content library functions
+const libThymeleaf = require('/lib/thymeleaf'); // Import the Thymeleaf rendering function
 
-var viewFile = resolve('city-list.html');
+const viewFile = resolve('city-list.html');
 
 // Handle the GET request
 exports.get = function (req) {
 
-    var countryPath = libPortal.getContent()._path;
+    const countryPath = libPortal.getContent()._path;
 
     // Get all the country's cities
-    var result = libContent.query({
+    const result = libContent.query({
         start: 0,
         count: 100,
         contentTypes: [
@@ -19,18 +19,19 @@ exports.get = function (req) {
         "query": "_path LIKE '/content" + countryPath + "/*'",
     });
 
-    var hits = result.hits;
+    const hits = result.hits;
 
-    var cities = [];
+    const cities = [];
 
     if (hits.length > 0) {
         // Loop through the contents and extract the needed data
-        for (var i = 0; i < hits.length; i++) {
+        for (let i = 0; i < hits.length; i++) {
 
-            var city = {};
-            city.name = hits[i].displayName;
-            city.location = hits[i].data.location;
-            city.population = hits[i].data.population ? 'Population: ' + hits[i].data.population : null;
+            const city = {
+                name: hits[i].displayName,
+                location: hits[i].data.location,
+                population: hits[i].data.population ? 'Population: ' + hits[i].data.population : null,
+            }
 
             cities.push(city);
         }
