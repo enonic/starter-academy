@@ -33,5 +33,5 @@ dependencies {
 // Where to look for the libraries we're using.
 repositories {
     mavenCentral()
-    xp.enonicRepo('dev')
+    xp.enonicRepo()
 }
