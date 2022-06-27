@@ -1,5 +1,5 @@
 plugins {
-    id 'com.enonic.xp.app' version '3.1.0' // A plugin developed by Enonic that adds some needed things to Gradle and makes app-building easier. It is required to use in any Enonic App.
+    id 'com.enonic.xp.app' version '3.2.0' // A plugin developed by Enonic that adds some needed things to Gradle and makes app-building easier. It is required to use in any Enonic App.
 }
 
 apply plugin: "com.enonic.xp.app"
