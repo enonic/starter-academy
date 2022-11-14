@@ -27,7 +27,7 @@ dependencies {
     include "com.enonic.xp:lib-project:${xpVersion}"
     include "com.enonic.xp:lib-export:${xpVersion}"
 
-    include 'com.enonic.lib:lib-thymeleaf:2.0.0' // Example of an external lib (formerly bunbled with XP, now independant)
+    include 'com.enonic.lib:lib-thymeleaf:2.0.2' // Example of an external lib (formerly bunbled with XP, now independant)
 }
 
 // Where to look for the libraries we're using.
